@@ -21,7 +21,7 @@ function getToken(){
 		body: { 
 			"grant_type": "authorization_code",
 			"code": urlcode,
-			"redirect_uri": "https://091111.github.io/main.html",
+			"redirect_uri": "https://091111.github.io/appdata.html",
 			"client_id": "793384252606287",
 			"client_secret": "uobinmueqiohlkcvyxby3unmyli4u1wa"
 		},
