@@ -14,7 +14,21 @@ function getToken(){
 	var urlcode = getUrlVars()["code"];
 	alert(urlcode);
 
-	$.ajax("https://apis.jins.com/meme/v1/oauth/token", {
+	var formData = new FormData();
+	formData.append("grant_type","authorization_code");
+	formData.append("code",urlcode);
+	formData.append("redirect_uri","http://tipporn.com/appdata.html");
+	formData.append("client_id","793384252606287");
+	formData.append("client_secret","uobinmueqiohlkcvyxby3unmyli4u1wa");
+	
+	
+	
+	
+	$.post('https://apis.jins.com/meme/v1/oauth/token', formData)
+		.done (showResult)
+		.fail(showError);
+	
+/*	$.ajax("https://apis.jins.com/meme/v1/oauth/token", {
 		type: "POST",
 		ContentType: "application/x-www-form-urlencoded",
 		body: { 
@@ -31,20 +45,5 @@ function getToken(){
 			alert("error");
 		}
 	});
+*/
 }
-
-/*function getTokenTest() {
-	var urlcode = getUrlVars()["code"];
-	alert(urlcode);
-
-	var request = new XMLHttpRequest();
-	var params = 'grant_type: authorization_code, code:' + urlcode + ', redirect_uri: http://tipporn.com/main.html, client_id: 793384252606287, client_secret: uobinmueqiohlkcvyxby3unmyli4u1wa';
-	request.open('POST', 'https://apis.jins.com/meme/v1/oauth/token', true);
-	request.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-	request.onreadystatechange = function() {
-		if(request.readyState == 4 && request.status == 200) {
-			alert("ok");
-		}
-	}
-	request.send(params);
-}*/
