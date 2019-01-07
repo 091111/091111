@@ -14,7 +14,7 @@ function getToken(){
 	var urlcode = getUrlVars()["code"];
 	alert(urlcode);
 
-	var formData = new FormData();
+	var formData = {};
 	formData.append("grant_type","authorization_code");
 	formData.append("code",urlcode);
 	formData.append("redirect_uri","http://tipporn.com/appdata.html");
