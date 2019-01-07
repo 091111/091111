@@ -14,7 +14,7 @@ function getToken(){
 	var urlcode = getUrlVars()["code"];
 	alert(urlcode);
 
-	$.ajax("http://cors.io/?https://apis.jins.com/meme/v1/oauth/token", {
+	$.ajax("https://cors.io/?https://apis.jins.com/meme/v1/oauth/token", {
 		type: "POST",
 		headers: { "Content-Type": "application/x-www-form-urlencoded" },
 		body: { 
