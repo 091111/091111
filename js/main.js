@@ -14,19 +14,16 @@ function getToken(){
 	var urlcode = getUrlVars()["code"];
 	alert(urlcode);
 
-	var formData = {};
+	var formData = new FormData();
 	formData.append("grant_type","authorization_code");
 	formData.append("code",urlcode);
 	formData.append("redirect_uri","http://tipporn.com/appdata.html");
 	formData.append("client_id","793384252606287");
 	formData.append("client_secret","uobinmueqiohlkcvyxby3unmyli4u1wa");
 	
-	
-	
-	
-	$.post('https://apis.jins.com/meme/v1/oauth/token', formData)
-		.done(function(){alert("done")})
-		.fail(function(){alert("fail")});
+	var request = new XMLHttpRequest();
+	request.open("POST","https://apis.jins.com/meme/v1/oauth/token");
+	request.send(formData);
 	
 /*	$.ajax("https://apis.jins.com/meme/v1/oauth/token", {
 		type: "POST",
