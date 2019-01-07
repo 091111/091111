@@ -17,7 +17,7 @@ function getToken(){
 	var formData = new FormData();
 	formData.append("grant_type","authorization_code");
 	formData.append("code",urlcode);
-	formData.append("redirect_uri","http://tipporn.com/index.html");
+	formData.append("redirect_uri","https://091111.github.io/index.html");
 	formData.append("client_id","793384252606287");
 	formData.append("client_secret","uobinmueqiohlkcvyxby3unmyli4u1wa");
 	
