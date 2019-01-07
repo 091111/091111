@@ -16,7 +16,7 @@ function getToken(){
 
 	$.ajax("https://apis.jins.com/meme/v1/oauth/token", {
 		type: "POST",
-		Content-Type: "application/x-www-form-urlencoded",
+		ContentType: "application/x-www-form-urlencoded",
 		body: { 
 			"grant_type": "authorization_code",
 			"code": urlcode,
