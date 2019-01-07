@@ -25,7 +25,7 @@ function getToken(){
 	
 	
 	$.post('https://apis.jins.com/meme/v1/oauth/token', formData)
-		.done(function(){alert("done")});
+		.done(function(){alert("done")})
 		.fail(function(){alert("fail")});
 	
 /*	$.ajax("https://apis.jins.com/meme/v1/oauth/token", {
